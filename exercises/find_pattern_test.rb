@@ -1,4 +1,3 @@
-
 gem 'minitest'
 require 'pry'
 require 'minitest/autorun'
@@ -78,31 +77,50 @@ class FindPatternTest < Minitest::Test
   end
 
   def test_find_first_multiple_of_3
-    skip
     numbers = [2, 8, 9, 27, 24, 5]
-
-    # Your code goes here
+    found = nil
+    numbers.each do |num|
+      if num % 3 == 0
+        found = num
+        break
+      end
+    end
     assert_equal 9, found
   end
 
   def test_find_first_word_starting_with_q
-    skip
     words = ["weirdo", "quill", "fast", "quaint", "quitter", "koala"]
-    # Your code goes here
+    found = nil
+    words.each do |w|
+      if w.start_with?("q")
+        found = w
+        break
+      end
+    end
     assert_equal "quill", found
   end
 
   def test_find_first_word_ending_with_er
-    skip
     words = ["biggest", "pour", "blight", "finger", "pie", "border"]
-    # Your code goes here
+    found = nil
+    words.each do |w|
+      if w.end_with?("er")
+        found = w
+        break
+      end
+    end
     assert_equal "finger", found
   end
 
   def test_find_first_number_greater_than_20
-    skip
     numbers = [1, 8, 19, 21, 29, 31, 34]
-    # Your code goes here
+    found = nil
+    numbers.each do |num|
+      if num >= 20
+        found = num
+        break
+      end
+    end
     assert_equal 21, found
   end
 
