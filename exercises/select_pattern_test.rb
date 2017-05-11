@@ -87,16 +87,20 @@ class SelectPatternTest < Minitest::Test
   end
 
   def test_pick_arrays
-    skip
     elements = ["CAT", ["dog"], 23, [56, 3, 8], "AIMLESS", 43, "butter"]
-    # Your code goes here
+    arrays = []
+      elements.each do |element|
+        arrays << element if element.is_a?(Array) == true
+      end
     assert_equal [["dog"], [56, 3, 8]], arrays
   end
 
   def test_pick_hashes
-    skip
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
-    # Your code goes here
+    hashes = []
+      elements.each do |element|
+        hashes << element if element.is_a?(Hash) == true
+      end
     assert_equal [{:dog=>"fido"}, {:stuff=>"things"}], hashes
   end
 
