@@ -43,7 +43,10 @@ class AllPatternTest < Minitest::Test
 
   def test_all_empty
     strings = ["", "", "", "", "", "", ""]
-    # Your code goes here
+    all_empty = true
+      strings.each do |string|
+        all_empty = false unless string == ""
+      end
     assert all_empty
   end
 
