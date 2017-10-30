@@ -1,4 +1,5 @@
 gem 'minitest'
+require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
 
@@ -17,28 +18,30 @@ class AllPatternTest < Minitest::Test
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-      # Your code goes here
+      all_zeros = false unless number.zero?
     end
     refute all_zeros
   end
 
   def test_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "gone", "gone"]
     all_gone = true
-    # Your code goes here
+      words.each do |word|
+        all_gone = false if word != "gone"
+      end
     assert all_gone
   end
 
   def test_not_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "there", "gone", "gone"]
-    # Your code goes here
+    all_gone = true
+      words.each do |word|
+        all_gone = false unless word == "gone"
+      end
     refute all_gone
   end
 
   def test_all_empty
-    skip
     strings = ["", "", "", "", "", "", ""]
     # Your code goes here
     assert all_empty
