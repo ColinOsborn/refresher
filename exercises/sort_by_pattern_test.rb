@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class SortByPatternTest < Minitest::Test
 
@@ -22,7 +23,7 @@ class SortByPatternTest < Minitest::Test
     things = ["pill", "box", "glass", "water", "sponge"]
     transformed = []
     things.each do |thing|
-      # Your code goes here
+      transformed << thing.ends_with()
     end
     transformed = transformed.sort
     sorted = []

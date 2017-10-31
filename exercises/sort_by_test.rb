@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class SortByTest < Minitest::Test
 
@@ -15,7 +16,8 @@ class SortByTest < Minitest::Test
   def test_sort_alphabetically_by_last_letter
     things = ["pill", "box", "glass", "water", "sponge"]
     sorted = things.sort_by do |thing|
-      # Your code goes here
+      binding.pry
+      thing.
     end
     assert_equal ["sponge", "pill", "water", "glass", "box"], sorted
   end
@@ -48,4 +50,5 @@ class SortByTest < Minitest::Test
     assert_equal [11.0, 10.01, 3.02, 7.9, 9.91], sorted
   end
 
+  end
 end

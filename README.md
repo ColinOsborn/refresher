@@ -56,7 +56,7 @@ You should perform the exercises in the order below:
 
 * `map`   x
 * `select` x
-* `find` (aka `detect`)
+* `find` (aka `detect`) x
 * `sort_by`
 * `count`
 * `reject`
