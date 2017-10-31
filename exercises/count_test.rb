@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class CountTest < Minitest::Test
 
@@ -15,15 +16,16 @@ class CountTest < Minitest::Test
   def test_count_numbers_greater_than_17
     numbers = [9, 18, 12, 17, 1, 3, 99]
     tally = numbers.count do |number|
-      # Your code goes here
+      number > 17
     end
     assert_equal 2, tally
   end
 
   def test_count_words_that_are_uppercase
-    skip
     words = ["trousers", "SOCKS", "sweater", "Cap", "SHOE", "TIE"]
-    # Your code goes here
+      tally = words.count do |word|
+        word.upcase
+      end
     assert_equal 3, tally
   end
 
