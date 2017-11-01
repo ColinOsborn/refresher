@@ -63,7 +63,7 @@ You should perform the exercises in the order below:
 * `reduce`
 * `any?`  x
 * `all?`
-* `none?`
+* `none?` x
 * `one?`
 * `group_by`
 * `zip`

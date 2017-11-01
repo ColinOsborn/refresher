@@ -22,17 +22,19 @@ class CountTest < Minitest::Test
   end
 
   def test_count_words_that_are_uppercase
+    skip
     words = ["trousers", "SOCKS", "sweater", "Cap", "SHOE", "TIE"]
       tally = words.count do |word|
-        word.upcase
+        word.casecmp('ABCDEF')
       end
     assert_equal 3, tally
   end
 
   def test_count_words_ending_in_ing
-    skip
     words = ["thought", "brake", "shin", "juice", "trash"]
-    # Your code goes here
+    tally = words.count do |word|
+      binding.pry
+      word.end_with?("ing")
     assert_equal 0, tally
   end
 
@@ -63,5 +65,5 @@ class CountTest < Minitest::Test
     # Your code goes here
     assert_equal 6, tally
   end
-
+end
 end
