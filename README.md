@@ -62,7 +62,7 @@ You should perform the exercises in the order below:
 * `reject`
 * `reduce`
 * `any?`  x
-* `all?`
+* `all?`  x
 * `none?` x
 * `one?`
 * `group_by`
